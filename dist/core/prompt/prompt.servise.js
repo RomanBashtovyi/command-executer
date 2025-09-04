@@ -13,5 +13,16 @@ class PromptService {
         ]);
         return result;
     }
+    async select(message, choices) {
+        const { result } = await inquirer_1.default.prompt([
+            {
+                type: 'list',
+                name: 'result',
+                message,
+                choices,
+            },
+        ]);
+        return result;
+    }
 }
 exports.PromptService = PromptService;
